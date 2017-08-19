@@ -1,0 +1,22 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# [START handlers]
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: .*
+  script: main.app
+# [END handlers]
+
+# [START libraries]
+libraries:
+- name: webapp
+  version: "2.5.2"
+# [END libraries]
